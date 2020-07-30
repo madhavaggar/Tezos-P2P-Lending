@@ -1,0 +1,2 @@
+Storage: sp.TUnit
+Params: sp.TVariant(viewAdministrator = sp.TAddress, viewBalance = sp.TNat, viewLoans = sp.TNat, viewTotalSupply = sp.TNat).layout((("viewAdministrator", "viewBalance"), ("viewLoans", "viewTotalSupply")))

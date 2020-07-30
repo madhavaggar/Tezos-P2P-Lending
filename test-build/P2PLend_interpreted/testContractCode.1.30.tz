@@ -1,0 +1,34 @@
+parameter (or (or (address %viewAdministrator) (nat %viewBalance)) (or (nat %viewLoans) (nat %viewTotalSupply)));
+storage   unit;
+code
+  {
+    DUP;        # pair @parameter @storage : pair @parameter @storage
+    CDR;        # @storage : pair @parameter @storage
+    SWAP;       # pair @parameter @storage : @storage
+    CAR;        # @parameter : @storage
+    IF_LEFT
+      {
+        IF_LEFT
+          {
+            DROP;       # @storage
+            # == viewAdministrator == # @storage
+          }
+          {
+            DROP;       # @storage
+            # == viewBalance == # @storage
+          }; # @storage
+      }
+      {
+        IF_LEFT
+          {
+            DROP;       # @storage
+            # == viewLoans == # @storage
+          }
+          {
+            DROP;       # @storage
+            # == viewTotalSupply == # @storage
+          }; # @storage
+      }; # @storage
+    NIL operation; # list operation : @storage
+    PAIR;       # pair (list operation) @storage
+  } # pair (list operation) @storage

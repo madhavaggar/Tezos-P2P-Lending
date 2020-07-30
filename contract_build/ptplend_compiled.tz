@@ -244,7 +244,7 @@ code
                     FAILWITH;   # FAILED
                   }; # @parameter%defaultor : @storage
                 SWAP;       # @storage : @parameter%defaultor
-                # sp.verify(self.data.loans[params].duration > (sp.timestamp(1595752470) - self.data.loans[params].starttime)) # @storage : @parameter%defaultor
+                # sp.verify(self.data.loans[params].duration > (sp.timestamp(1596106768) - self.data.loans[params].starttime)) # @storage : @parameter%defaultor
                 DUP;        # @storage : @storage : @parameter%defaultor
                 DUG 2;      # @storage : @parameter%defaultor : @storage
                 CDAR;       # map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair (nat %collateral) (pair (int %duration) (address %lender)))) (pair (pair (bool %lent) (bool %paid)) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : @parameter%defaultor : @storage
@@ -261,7 +261,7 @@ code
                     FAILWITH;   # FAILED
                   }; # @some : @parameter%defaultor : @storage
                 CDDDDR;     # timestamp : @parameter%defaultor : @storage
-                PUSH timestamp "1595752470"; # timestamp : timestamp : @parameter%defaultor : @storage
+                PUSH timestamp "1596106768"; # timestamp : timestamp : @parameter%defaultor : @storage
                 SUB;        # int : @parameter%defaultor : @storage
                 DIG 2;      # @storage : int : @parameter%defaultor
                 DUP;        # @storage : @storage : int : @parameter%defaultor
@@ -285,7 +285,7 @@ code
                 IF
                   {}
                   {
-                    PUSH string "WrongCondition: self.data.loans[params].duration > (sp.timestamp(1595752470) - self.data.loans[params].starttime)"; # string : @parameter%defaultor : @storage
+                    PUSH string "WrongCondition: self.data.loans[params].duration > (sp.timestamp(1596106768) - self.data.loans[params].starttime)"; # string : @parameter%defaultor : @storage
                     FAILWITH;   # FAILED
                   }; # @parameter%defaultor : @storage
                 # sp.verify(self.data.loans[params].lent == True) # @parameter%defaultor : @storage
@@ -906,7 +906,7 @@ code
                 SWAP;       # address : big_map address nat : pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply)) : @parameter%lend
                 PAIR;       # pair address (big_map address nat) : pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply)) : @parameter%lend
                 PAIR;       # pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : @parameter%lend
-                # self.data.loans[params].starttime = sp.timestamp(1595752470) # pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : @parameter%lend
+                # self.data.loans[params].starttime = sp.timestamp(1596106768) # pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : @parameter%lend
                 DUP;        # pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : @parameter%lend
                 CAR;        # pair address (big_map address nat) : pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : @parameter%lend
                 SWAP;       # pair (pair address (big_map address nat)) (pair (map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime)))))) (pair (nat %noLoans) (nat %totalSupply))) : pair address (big_map address nat) : @parameter%lend
@@ -940,7 +940,7 @@ code
                 CAR;        # nat : pair (nat %payback) (pair (bool %req) (timestamp %starttime)) : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
                 SWAP;       # pair (nat %payback) (pair (bool %req) (timestamp %starttime)) : nat : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
                 CDAR;       # bool : nat : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
-                PUSH timestamp "1595752470"; # timestamp : bool : nat : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
+                PUSH timestamp "1596106768"; # timestamp : bool : nat : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
                 SWAP;       # bool : timestamp : nat : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
                 PAIR;       # pair bool timestamp : nat : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
                 SWAP;       # nat : pair bool timestamp : pair bool bool : pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address)) : @parameter%lend : map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair nat (pair int address))) (pair (pair bool bool) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : pair (nat %noLoans) (nat %totalSupply) : pair address (big_map address nat)
@@ -1152,7 +1152,7 @@ code
                         FAILWITH;   # FAILED
                       }; # @parameter%paid : @storage
                     SWAP;       # @storage : @parameter%paid
-                    # sp.verify(self.data.loans[params.index].duration >= (sp.timestamp(1595752470) - self.data.loans[params.index].starttime)) # @storage : @parameter%paid
+                    # sp.verify(self.data.loans[params.index].duration >= (sp.timestamp(1596106769) - self.data.loans[params.index].starttime)) # @storage : @parameter%paid
                     DUP;        # @storage : @storage : @parameter%paid
                     DUG 2;      # @storage : @parameter%paid : @storage
                     CDAR;       # map nat (pair (pair (pair (nat %amount) (address %borrower)) (pair (nat %collateral) (pair (int %duration) (address %lender)))) (pair (pair (bool %lent) (bool %paid)) (pair (nat %payback) (pair (bool %req) (timestamp %starttime))))) : @parameter%paid : @storage
@@ -1170,7 +1170,7 @@ code
                         FAILWITH;   # FAILED
                       }; # @some : @parameter%paid : @storage
                     CDDDDR;     # timestamp : @parameter%paid : @storage
-                    PUSH timestamp "1595752470"; # timestamp : timestamp : @parameter%paid : @storage
+                    PUSH timestamp "1596106769"; # timestamp : timestamp : @parameter%paid : @storage
                     SUB;        # int : @parameter%paid : @storage
                     DIG 2;      # @storage : int : @parameter%paid
                     DUP;        # @storage : @storage : int : @parameter%paid
@@ -1195,7 +1195,7 @@ code
                     IF
                       {}
                       {
-                        PUSH string "WrongCondition: self.data.loans[params.index].duration >= (sp.timestamp(1595752470) - self.data.loans[params.index].starttime)"; # string : @parameter%paid : @storage
+                        PUSH string "WrongCondition: self.data.loans[params.index].duration >= (sp.timestamp(1596106769) - self.data.loans[params.index].starttime)"; # string : @parameter%paid : @storage
                         FAILWITH;   # FAILED
                       }; # @parameter%paid : @storage
                     # sp.verify(self.data.loans[params.index].lent == True) # @parameter%paid : @storage

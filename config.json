@@ -1,7 +1,7 @@
 {
     "compile_config": {
         "contract_name": "ptplend.py",
-        "class_name": "P2PLend(sp.address('tz1NN5QooJWkW44KFfrXqLRaxEa5Wxw3f9FF'))"
+        "class_name": "P2PLend(sp.address('tz1RXSXhc1XtNb7o19TAnvX2ESKTvRFgcAR1'))"
     },
     "test_config": {
         "contract_name": "ptplend.py",
@@ -20,7 +20,7 @@
         "gas_limit": 500000
     },
     "contract_interaction_config": {
-        "node": "https://testnet.tezster.tech",
+        "node": "https://carthagenet.smartpy.io/",
         "api-key": ""
     }
 }
