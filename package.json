@@ -33,7 +33,7 @@
   "dependencies": {
     "bs58check": "^2.1.2",
     "chalk": "^4.1.0",
-    "conseiljs": "0.4.3",
+    "conseiljs": "5.2.5",
     "libsodium-wrappers-sumo": "^0.7.6"
   },
   "main": "index.js",
